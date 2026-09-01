@@ -1,5 +1,7 @@
 # chat-open-router
 
+![Demonstração](./demo.png)
+
 Interface de chat conversacional (estilo Claude) em React + TypeScript +
 Tailwind CSS, com um backend Express que fala com a API do
 [OpenRouter](https://openrouter.ai). A chave de API fica só no servidor —
