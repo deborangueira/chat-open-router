@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar discreta, no estilo dos apps de chat modernos */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 113, 100, 0.35);
+  border-radius: 9999px;
+}
+.dark .scroll-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Estilos de conteúdo markdown renderizado nas mensagens */
+.prose-chat {
+  line-height: 1.65;
+}
+.prose-chat p {
+  margin: 0 0 0.75em;
+}
+.prose-chat p:last-child {
+  margin-bottom: 0;
+}
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0 0 0.75em;
+  padding-left: 1.4em;
+}
+.prose-chat li {
+  margin-bottom: 0.25em;
+}
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3 {
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+}
+.prose-chat h1:first-child,
+.prose-chat h2:first-child,
+.prose-chat h3:first-child {
+  margin-top: 0;
+}
+.prose-chat a {
+  color: #c96442;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-chat blockquote {
+  border-left: 3px solid rgba(120, 113, 100, 0.35);
+  padding-left: 0.9em;
+  margin: 0 0 0.75em;
+  color: inherit;
+  opacity: 0.85;
+}
+.prose-chat code:not(pre code) {
+  background: rgba(120, 113, 100, 0.15);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.prose-chat pre {
+  margin: 0 0 0.75em;
+  border-radius: 10px;
+  overflow: auto;
+  font-size: 0.85em;
+}
+.prose-chat table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 0.75em;
+  font-size: 0.9em;
+}
+.prose-chat th,
+.prose-chat td {
+  border: 1px solid rgba(120, 113, 100, 0.3);
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+
+/* Indicador de "digitando" */
+.typing-dot {
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
